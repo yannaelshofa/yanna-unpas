@@ -25,6 +25,7 @@ $mahasiswa = query("select * from mahasiswa");
       <th>Nama</th>
       <th>nrp</th>
       <th>email</th>
+      <th>Aksi</th>
     </tr>
     <?php $i = 1;
     foreach ($mahasiswa as $m) : ?>
@@ -33,6 +34,7 @@ $mahasiswa = query("select * from mahasiswa");
         <td><?= $m['nama']; ?></td>
         <td><?= $m['nrp']; ?></td>
         <td><?= $m['email']; ?></td>
+        <td><a href="detail.php?id=<?= $m['id']; ?>">Detail</a></td>
       </tr>
     <?php endforeach; ?>
   </table>
