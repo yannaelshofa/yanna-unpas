@@ -13,3 +13,16 @@ function query($query)
   }
   return $rows;
 }
+function simpan($data)
+{
+  $conn = koneksi();
+  //var_dump($data);
+  $nrp = htmlentities($data['nrp']);
+  $nama = htmlentities($data['nama']);
+  $jurusan = htmlentities($data['jurusan']);
+  // var_dump($jurusan);
+  $query = "INSERT into mahasiswa (nrp,nama,jurusan)values('$nrp','$nama','$jurusan')";
+  mysqli_query($conn, $query);
+  echo mysqli_error($conn);
+  return mysqli_affected_rows($conn);
+}

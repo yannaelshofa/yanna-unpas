@@ -19,6 +19,9 @@ $mahasiswa = query("select * from mahasiswa");
 
 <body>
   <h1>Data Mahasiswa</h1>
+  <a href="tambah.php">Tambah Data</a>
+  <br>
+  <br>
   <table border="1">
     <tr>
       <th>#</th>
