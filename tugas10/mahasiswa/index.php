@@ -20,6 +20,7 @@ $mahasiswa = query("select * from mahasiswa");
 <body>
   <h1>Data Mahasiswa</h1>
   <a href="tambah.php">Tambah Data</a>
+
   <br>
   <br>
   <table border="1">
@@ -37,7 +38,12 @@ $mahasiswa = query("select * from mahasiswa");
         <td><?= $m['nama']; ?></td>
         <td><?= $m['nrp']; ?></td>
         <td><?= $m['email']; ?></td>
-        <td><a href="detail.php?id=<?= $m['id']; ?>">Detail</a></td>
+        <td><a href="detail.php?id=<?= $m['id']; ?>">Detail</a>
+          |
+          <a href="hapus.php?id=<?= $m['id']; ?>" onclick="return confirm('Apakah Anda Yakin menghapus??')">hapus</a>
+          |
+          <a href="edit.php?id=<?= $m['id']; ?>" onclick="return confirm('Apakah Anda Yakin Merubah??')">edit</a>
+        </td>
       </tr>
     <?php endforeach; ?>
   </table>
